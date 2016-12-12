@@ -16,8 +16,6 @@ module.exports = function({ types }) {
         }
       }
     },
-    manipulateOptions(opts, parserOpts) {
-      parserOpts.plugins.push("jsx");
-    }
+    inherits: require('babel-plugin-syntax-jsx')
   };
 };
