@@ -1,10 +1,19 @@
-let { sync } = require('glob');
-let { basename, extname } = require('path');
+
+
 let transformAttributes = require('./util/transformAttributes');
 let removeJSXText = require('./util/removeJSXText');
-let funcs = sync('./src/funcs/*.js').map(
-  (name) => basename(name, extname(name))
-);
+let funcs = ['arc', 'createRegularPolygon', 'hitRect', 'rect',
+             'stroke', 'arcTo', 'ellipse', 'hitRegion',
+             'render', 'strokeArc', 'beginClip', 'fill',
+             'imageSmoothingEnabled', 'resetTransform', 'strokeRect',
+             'beginPath', 'fillArc', 'lineStyle', 'rotate',
+             'strokeText', 'bezierCurveTo', 'fillRect', 'lineTo',
+             'scale', 'textStyle', 'clearRect', 'fillStyle',
+             'moveTo', 'setTransform', 'transform', 'clip',
+             'fillText', 'path', 'shadowStyle', 'translate',
+             'clipPath', 'globalAlpha', 'placeholder', 'skewX',
+             'closePath', 'globalCompositeOperation',  'quadraticCurveTo', 'skewY'];
+
 module.exports = function({ types }) {
   return {
     visitor: {
