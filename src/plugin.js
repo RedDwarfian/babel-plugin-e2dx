@@ -14,12 +14,19 @@ let funcs = ['arc', 'createRegularPolygon', 'hitRect', 'rect',
              'clipPath', 'globalAlpha', 'placeholder', 'skewX',
              'closePath', 'globalCompositeOperation',  'quadraticCurveTo', 'skewY'];
 
+let svgElements = ['path', 'rect', 'ellipse'];
+
 module.exports = function({ types }) {
   return {
     visitor: {
       JSXElement(path, state) {
         let { node } = path;
         let { openingElement: { attributes, name: { name } }, children } = node;
+
+        if (state.opts && state.opts.ignoreSVG && svgElements.includes(name)) {
+          return;
+        }
+
         if (funcs.includes(name)) {
           return require('./funcs/' + name)(path,
             types,
