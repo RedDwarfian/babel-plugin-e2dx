@@ -12,7 +12,11 @@ module.exports = function({ types }) {
         let { node } = path;
         let { openingElement: { attributes, name: { name } }, children } = node;
         if (funcs.includes(name)) {
-          return require('./funcs/' + name)(path, types, transformAttributes(attributes, types), removeJSXText(children, types));
+          return require('./funcs/' + name)(path,
+            types,
+            transformAttributes(attributes, types),
+            removeJSXText(children, types)
+          );
         }
       }
     },
