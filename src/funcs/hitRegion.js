@@ -1,6 +1,6 @@
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
-  let { id, points } = attributes;
+  let { id, region } = attributes;
 
   return path.replaceWith(
     callExpression(
@@ -8,7 +8,7 @@ module.exports = (path, types, attributes, children) => {
         identifier('e2d'),
         identifier('hitRegion')
       ),
-      [id, points]
+      [id, region]
     )
   );
 };

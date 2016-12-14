@@ -8,10 +8,6 @@ module.exports = (path, types, attributes, children) => {
     args.unshift(x, y);
   }
 
-  if (x && startAngle) {
-    args.push(startAngle, endAngle);
-  }
-
   if (x && rotation) {
     args.push(rotation);
   }
@@ -28,7 +24,7 @@ module.exports = (path, types, attributes, children) => {
     callExpression(
       memberExpression(
         identifier('e2d'),
-        identifier('elipse')
+        identifier('ellipse')
       ),
       args
     )
