@@ -11,7 +11,7 @@ let funcs = ['arc', 'createRegularPolygon', 'hitRect', 'rect',
              'scale', 'textStyle', 'clearRect', 'fillStyle',
              'moveTo', 'setTransform', 'transform', 'clip',
              'fillText', 'path', 'shadowStyle', 'translate',
-             'clipPath', 'globalAlpha', 'placeholder', 'skewX',
+             'clipPath', 'globalAlpha', 'placeHolder', 'skewX',
              'closePath', 'globalCompositeOperation',  'quadraticCurveTo', 'skewY'];
 
 let svgElements = ['path', 'rect', 'ellipse'];

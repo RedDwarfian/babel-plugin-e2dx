@@ -5,7 +5,7 @@ module.exports = (path, types, attributes, children) => {
     callExpression(
       memberExpression(
         identifier('e2d'),
-        identifier('placeholder')
+        identifier('placeHolder')
       ),
       []
     )
