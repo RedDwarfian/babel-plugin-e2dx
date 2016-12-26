@@ -1,13 +1,13 @@
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
-  console.log(children);
+
   return path.replaceWith(
     callExpression(
       memberExpression(
-        identifier('e2d'),
-        identifier('translate')
+        identifier('e2t'),
+        identifier('template')
       ),
-      [attributes.x, attributes.y].concat(children)
+      children
     )
   );
 };

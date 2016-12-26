@@ -2,7 +2,7 @@
   "name": "babel-plugin-e2dx",
   "version": "1.0.0",
   "description": "Babel transformer for e2d drawing commands",
-  "main": "src/plugin.js",
+  "main": "dist/babel-plugin-e2dx.js",
   "scripts": {
     "test": "node test"
   },
@@ -16,7 +16,10 @@
   ],
   "author": "Joshua <tenner.joshua@gmail.com>",
   "license": "MIT",
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "webpack": "^2.2.0-rc.2"
+  },
   "dependencies": {
     "babel-plugin-syntax-jsx": "^6.18.0"
   }
