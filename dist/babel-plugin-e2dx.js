@@ -102,28 +102,28 @@ var map = {
 	"./beginClip.js": 9,
 	"./beginPath.js": 10,
 	"./bezierCurveTo.js": 11,
-	"./clearRect.js": 12,
-	"./clip.js": 13,
-	"./clipPath.js": 14,
-	"./closePath.js": 15,
-	"./createRegularPolygon.js": 16,
-	"./ellipse.js": 17,
-	"./fill.js": 18,
-	"./fillArc.js": 19,
-	"./fillRect.js": 20,
-	"./fillStyle.js": 21,
-	"./fillText.js": 22,
-	"./globalAlpha.js": 23,
-	"./globalCompositeOperation.js": 24,
-	"./hitRect.js": 25,
-	"./hitRegion.js": 26,
-	"./imageSmoothingEnabled.js": 27,
-	"./lineStyle.js": 28,
-	"./lineTo.js": 29,
-	"./moveTo.js": 30,
-	"./params.js": 31,
-	"./path.js": 32,
-	"./placeHolder.js": 33,
+	"./children.js": 12,
+	"./clearRect.js": 13,
+	"./clip.js": 14,
+	"./clipPath.js": 15,
+	"./closePath.js": 16,
+	"./createRegularPolygon.js": 17,
+	"./ellipse.js": 18,
+	"./fill.js": 19,
+	"./fillArc.js": 20,
+	"./fillRect.js": 21,
+	"./fillStyle.js": 22,
+	"./fillText.js": 23,
+	"./globalAlpha.js": 24,
+	"./globalCompositeOperation.js": 25,
+	"./hitRect.js": 26,
+	"./hitRegion.js": 27,
+	"./imageSmoothingEnabled.js": 28,
+	"./lineStyle.js": 29,
+	"./lineTo.js": 30,
+	"./moveTo.js": 31,
+	"./params.js": 32,
+	"./path.js": 33,
 	"./quadraticCurveTo.js": 34,
 	"./rect.js": 35,
 	"./render.js": 36,
@@ -328,6 +328,24 @@ module.exports = (path, types, attributes, children) => {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
+
+  return path.replaceWith(
+    callExpression(
+      memberExpression(
+        identifier('e2t'),
+        identifier('children')
+      ),
+      []
+    )
+  );
+};
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+module.exports = (path, types, attributes, children) => {
+  let { identifier, memberExpression, callExpression } = types;
   let { x, y, width, height } = attributes;
 
   return path.replaceWith(
@@ -342,7 +360,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -360,7 +378,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -377,7 +395,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -394,7 +412,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -412,7 +430,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -449,7 +467,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -466,7 +484,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -498,7 +516,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -517,7 +535,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -536,7 +554,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -565,7 +583,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -584,7 +602,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -603,7 +621,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -622,7 +640,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -641,7 +659,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -660,7 +678,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports) {
 
 let props = ['lineWidth', 'lineCap', 'lineJoin', 'miterLimit', 'lineDash', 'lineDashOffset'];
@@ -693,7 +711,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -712,7 +730,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -732,7 +750,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -750,7 +768,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -763,24 +781,6 @@ module.exports = (path, types, attributes, children) => {
         identifier('path')
       ),
       children
-    )
-  );
-};
-
-/***/ },
-/* 33 */
-/***/ function(module, exports) {
-
-module.exports = (path, types, attributes, children) => {
-  let { identifier, memberExpression, callExpression } = types;
-
-  return path.replaceWith(
-    callExpression(
-      memberExpression(
-        identifier('e2d'),
-        identifier('placeHolder')
-      ),
-      []
     )
   );
 };

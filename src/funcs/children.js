@@ -4,8 +4,8 @@ module.exports = (path, types, attributes, children) => {
   return path.replaceWith(
     callExpression(
       memberExpression(
-        identifier('e2d'),
-        identifier('placeHolder')
+        identifier('e2t'),
+        identifier('children')
       ),
       []
     )
