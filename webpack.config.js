@@ -14,8 +14,14 @@ let buildConfig = (useBabel, minify, name) => ({
     libraryTarget: 'commonjs2'
   },
   externals: [
-    'babel-plugin-syntax-jsx'
+    'babel-plugin-syntax-jsx',
+    'colors'
   ],
+  module: {
+    rules: [
+      { test: /\.pegjs$/, use: ["peg-loader"] }
+    ]
+  },
   target: 'node',
   performance: false
 });

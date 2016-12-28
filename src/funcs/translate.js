@@ -1,6 +1,5 @@
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
-  console.log(children);
   return path.replaceWith(
     callExpression(
       memberExpression(

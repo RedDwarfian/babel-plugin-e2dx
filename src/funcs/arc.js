@@ -14,7 +14,6 @@ module.exports = (path, types, attributes, children) => {
   if (x && startAngle && anticlockwise) {
     args.push(anticlockwise);
   }
-
   return path.replaceWith(
     callExpression(
       memberExpression(
