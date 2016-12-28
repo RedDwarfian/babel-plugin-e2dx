@@ -16,11 +16,11 @@ module.exports = (props, children, loc, types, name) => {
   }
 
   if (!props.width) {
-    warning('width', 'e2d', name, loc, '1');
+    warning('width', 'e2d', name, loc, '0');
     props.width = types.numericLiteral(0);
   }
   if (!props.height) {
-    warning('height', 'e2d', name, loc, '1');
+    warning('height', 'e2d', name, loc, '0');
     props.height = types.numericLiteral(0);
   }
 };
