@@ -64,15 +64,15 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 83);
+/******/ 	return __webpack_require__(__webpack_require__.s = 89);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-let colors = __webpack_require__(22);
-let colorize = __webpack_require__(23);
+let colors = __webpack_require__(23);
+let colorize = __webpack_require__(24);
 
 module.exports = (parameter, library, functionName, loc, replaceValue) => console.log(`
   ${colors.yellow.bold('WARNING')}: Parameter missing: [${colorize.parse(parameter)}] for [${colorize.parse(`${library}.${functionName}`)}]. Using value [${colorize.parse(replaceValue)}] instead.
@@ -117,10 +117,10 @@ module['exports'] = colors;
 
 colors.themes = {};
 
-var ansiStyles = colors.styles = __webpack_require__(20);
+var ansiStyles = colors.styles = __webpack_require__(21);
 var defineProps = Object.defineProperties;
 
-colors.supportsColor = __webpack_require__(21);
+colors.supportsColor = __webpack_require__(22);
 
 if (typeof colors.enabled === "undefined") {
   colors.enabled = colors.supportsColor;
@@ -250,15 +250,15 @@ var sequencer = function sequencer (map, str) {
 };
 
 // custom formatter methods
-colors.trap = __webpack_require__(14);
-colors.zalgo = __webpack_require__(15);
+colors.trap = __webpack_require__(15);
+colors.zalgo = __webpack_require__(16);
 
 // maps
 colors.maps = {};
-colors.maps.america = __webpack_require__(16);
-colors.maps.zebra = __webpack_require__(19);
-colors.maps.rainbow = __webpack_require__(17);
-colors.maps.random = __webpack_require__(18)
+colors.maps.america = __webpack_require__(17);
+colors.maps.zebra = __webpack_require__(20);
+colors.maps.rainbow = __webpack_require__(18);
+colors.maps.random = __webpack_require__(19)
 
 for (var map in colors.maps) {
   (function(map){
@@ -358,6 +358,30 @@ module.exports = (props, children, loc, types, name) => {
 
 /***/ },
 /* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+let warning = __webpack_require__(0);
+
+module.exports = (props, children, loc, types, name) => {
+
+  if (!props.text) {
+    warning('text', 'e2d', name, loc, '""');
+    props.text = types.stringLiteral("");
+  }
+
+  if (!props.x) {
+    warning('x', 'e2d', name, loc, '0');
+    props.x = types.numericLiteral(0);
+  }
+
+  if (!props.y) {
+    warning('y', 'e2d', name, loc, '0');
+    props.y = types.numericLiteral(0);
+  }
+};
+
+/***/ },
+/* 6 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, callee, attributes, children) => {
@@ -382,94 +406,56 @@ module.exports = (path, types, callee, attributes, children) => {
 };
 
 /***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
-
-var map = {
-	"./arc.js": 24,
-	"./arcTo.js": 25,
-	"./beginClip.js": 26,
-	"./beginPath.js": 27,
-	"./bezierCurveTo.js": 28,
-	"./children.js": 29,
-	"./clearRect.js": 30,
-	"./clip.js": 31,
-	"./clipPath.js": 32,
-	"./closePath.js": 33,
-	"./createRegularPolygon.js": 34,
-	"./ellipse.js": 35,
-	"./fill.js": 36,
-	"./fillArc.js": 37,
-	"./fillRect.js": 38,
-	"./fillStyle.js": 39,
-	"./fillText.js": 40,
-	"./globalAlpha.js": 41,
-	"./globalCompositeOperation.js": 42,
-	"./hitRect.js": 43,
-	"./hitRegion.js": 44,
-	"./imageSmoothingEnabled.js": 45,
-	"./lineStyle.js": 46,
-	"./lineTo.js": 47,
-	"./moveTo.js": 48,
-	"./params.js": 49,
-	"./path.js": 50,
-	"./quadraticCurveTo.js": 51,
-	"./rect.js": 52,
-	"./render.js": 53,
-	"./resetTransform.js": 54,
-	"./rotate.js": 55,
-	"./scale.js": 56,
-	"./setTransform.js": 57,
-	"./shadowStyle.js": 58,
-	"./skewX.js": 59,
-	"./skewY.js": 60,
-	"./stroke.js": 61,
-	"./strokeArc.js": 62,
-	"./strokeRect.js": 63,
-	"./strokeStyle.js": 64,
-	"./strokeText.js": 65,
-	"./template.js": 66,
-	"./textStyle.js": 67,
-	"./transform.js": 68,
-	"./translate.js": 69
-};
-function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 6;
-
-
-/***/ },
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 var map = {
-	"./arc.js": 3,
-	"./arcTo.js": 70,
-	"./bezierCurveTo.js": 71,
-	"./clearRect.js": 72,
-	"./createRegularPolygon.js": 73,
-	"./fillArc.js": 74,
-	"./fillRect.js": 75,
-	"./fillStyle.js": 4,
-	"./path.js": 76,
-	"./rect.js": 2,
-	"./scale.js": 77,
-	"./strokeArc.js": 78,
-	"./strokeRect.js": 79,
-	"./strokeStyle.js": 80,
-	"./translate.js": 81
+	"./arc.js": 25,
+	"./arcTo.js": 26,
+	"./beginClip.js": 27,
+	"./beginPath.js": 28,
+	"./bezierCurveTo.js": 29,
+	"./children.js": 30,
+	"./clearRect.js": 31,
+	"./clip.js": 32,
+	"./clipPath.js": 33,
+	"./closePath.js": 34,
+	"./createRegularPolygon.js": 35,
+	"./ellipse.js": 36,
+	"./fill.js": 37,
+	"./fillArc.js": 38,
+	"./fillRect.js": 39,
+	"./fillStyle.js": 40,
+	"./fillText.js": 41,
+	"./globalAlpha.js": 42,
+	"./globalCompositeOperation.js": 43,
+	"./hitRect.js": 44,
+	"./hitRegion.js": 45,
+	"./imageSmoothingEnabled.js": 46,
+	"./lineStyle.js": 47,
+	"./lineTo.js": 48,
+	"./moveTo.js": 49,
+	"./params.js": 50,
+	"./path.js": 51,
+	"./quadraticCurveTo.js": 52,
+	"./rect.js": 53,
+	"./render.js": 54,
+	"./resetTransform.js": 55,
+	"./rotate.js": 56,
+	"./scale.js": 57,
+	"./setTransform.js": 58,
+	"./shadowStyle.js": 59,
+	"./skewX.js": 60,
+	"./skewY.js": 61,
+	"./stroke.js": 62,
+	"./strokeArc.js": 63,
+	"./strokeRect.js": 64,
+	"./strokeStyle.js": 65,
+	"./strokeText.js": 66,
+	"./template.js": 67,
+	"./textStyle.js": 68,
+	"./transform.js": 69,
+	"./translate.js": 70
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -490,6 +476,50 @@ webpackContext.id = 7;
 
 /***/ },
 /* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+var map = {
+	"./arc.js": 3,
+	"./arcTo.js": 71,
+	"./bezierCurveTo.js": 72,
+	"./clearRect.js": 73,
+	"./createRegularPolygon.js": 74,
+	"./ellipse.js": 75,
+	"./fillArc.js": 76,
+	"./fillRect.js": 77,
+	"./fillStyle.js": 4,
+	"./fillText.js": 5,
+	"./globalAlpha.js": 78,
+	"./globalCompositeOperation.js": 79,
+	"./hitRect.js": 80,
+	"./path.js": 81,
+	"./rect.js": 2,
+	"./scale.js": 82,
+	"./strokeArc.js": 83,
+	"./strokeRect.js": 84,
+	"./strokeStyle.js": 85,
+	"./strokeText.js": 86,
+	"./translate.js": 87
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 8;
+
+
+/***/ },
+/* 9 */
 /***/ function(module, exports) {
 
 
@@ -512,7 +542,7 @@ module.exports = (member, types) => {
 };
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports) {
 
 module.exports = (children, types) => children.filter(
@@ -522,7 +552,7 @@ module.exports = (children, types) => children.filter(
 );
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 module.exports = (attributes, types) => attributes.reduce(
@@ -533,19 +563,19 @@ module.exports = (attributes, types) => attributes.reduce(
 {});
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports) {
 
 module.exports = require("babel-plugin-syntax-jsx");
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports) {
 
 module.exports = require("path");
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -554,11 +584,11 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 13;
+webpackEmptyContext.id = 14;
 
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
 module['exports'] = function runTheTrap (text, options) {
@@ -609,7 +639,7 @@ module['exports'] = function runTheTrap (text, options) {
 
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports) {
 
 // please no
@@ -719,7 +749,7 @@ module['exports'] = function zalgo(text, options) {
 
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 var colors = __webpack_require__(1);
@@ -736,7 +766,7 @@ module['exports'] = (function() {
 })();
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 var colors = __webpack_require__(1);
@@ -755,7 +785,7 @@ module['exports'] = (function () {
 
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 var colors = __webpack_require__(1);
@@ -768,7 +798,7 @@ module['exports'] = (function () {
 })();
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 var colors = __webpack_require__(1);
@@ -778,7 +808,7 @@ module['exports'] = function (letter, i, exploded) {
 };
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports) {
 
 /*
@@ -860,7 +890,7 @@ Object.keys(codes).forEach(function (key) {
 });
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
 /*
@@ -926,7 +956,7 @@ module.exports = (function () {
 })();
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 //
@@ -940,7 +970,7 @@ var colors = __webpack_require__(1);
 module['exports'] = colors;
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = (function() {
@@ -1627,7 +1657,7 @@ module.exports = (function() {
     }
 
 
-      let colors = __webpack_require__(82);
+      let colors = __webpack_require__(88);
 
 
     peg$result = peg$startRuleFunction();
@@ -1657,7 +1687,7 @@ module.exports = (function() {
 })()
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1688,7 +1718,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1708,7 +1738,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1725,7 +1755,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1742,7 +1772,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1762,7 +1792,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1780,7 +1810,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1799,7 +1829,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1817,7 +1847,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1834,7 +1864,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 33 */
+/* 34 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1851,7 +1881,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 34 */
+/* 35 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1869,7 +1899,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 35 */
+/* 36 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1906,7 +1936,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 36 */
+/* 37 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1923,7 +1953,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 37 */
+/* 38 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1955,7 +1985,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 38 */
+/* 39 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1974,7 +2004,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 39 */
+/* 40 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1993,7 +2023,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 40 */
+/* 41 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2022,7 +2052,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 41 */
+/* 42 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2041,7 +2071,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 42 */
+/* 43 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2060,7 +2090,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 43 */
+/* 44 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2079,7 +2109,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 44 */
+/* 45 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2098,7 +2128,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 45 */
+/* 46 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2117,7 +2147,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 46 */
+/* 47 */
 /***/ function(module, exports) {
 
 let props = ['lineWidth', 'lineCap', 'lineJoin', 'miterLimit', 'lineDash', 'lineDashOffset'];
@@ -2150,7 +2180,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 47 */
+/* 48 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2169,7 +2199,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 48 */
+/* 49 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2189,7 +2219,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 49 */
+/* 50 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2207,7 +2237,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 50 */
+/* 51 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2225,7 +2255,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 51 */
+/* 52 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2244,7 +2274,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 52 */
+/* 53 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2263,7 +2293,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 53 */
+/* 54 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2282,7 +2312,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 54 */
+/* 55 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2300,7 +2330,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 55 */
+/* 56 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2318,7 +2348,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 56 */
+/* 57 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2335,7 +2365,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 57 */
+/* 58 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2354,7 +2384,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 58 */
+/* 59 */
 /***/ function(module, exports) {
 
 let props = ['shadowBlur', 'shadowColor', 'shadowOffsetX', 'shadowOffsetY'];
@@ -2387,7 +2417,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 59 */
+/* 60 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2405,7 +2435,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 60 */
+/* 61 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2423,7 +2453,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 61 */
+/* 62 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2440,7 +2470,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 62 */
+/* 63 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2472,7 +2502,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 63 */
+/* 64 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2491,7 +2521,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 64 */
+/* 65 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2510,7 +2540,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 65 */
+/* 66 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2539,7 +2569,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 66 */
+/* 67 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2557,7 +2587,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 67 */
+/* 68 */
 /***/ function(module, exports) {
 
 let props = ['font', 'textAlign', 'textBaseline', 'direction']
@@ -2591,7 +2621,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 68 */
+/* 69 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2610,7 +2640,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 69 */
+/* 70 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2627,7 +2657,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 70 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2645,7 +2675,7 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 71 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2662,13 +2692,13 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 72 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(2);
 
 /***/ },
-/* 73 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2691,19 +2721,115 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 74 */
+/* 75 */
+/***/ function(module, exports, __webpack_require__) {
+
+let warning = __webpack_require__(0);
+
+module.exports = (props, children, loc, types, name) => {
+  let checkAngles = !!(props.startAngle || props.endAngle || props.anticlockwise),
+    checkPosition = !!(props.x || props.y || props.rotation || checkAngles);
+
+  if (checkAngles) {
+    if (!props.endAngle) {
+      warning('endAngle', 'e2d', name, loc, 'Math.PI/2');
+      props.endAngle = types.numericLiteral(Math.PI * 2);
+    }
+
+    if (!props.startAngle) {
+      warning('startAngle', 'e2d', name, loc, '0');
+      props.startAngle = types.numericLiteral(0);
+    }
+    if (!props.rotation) {
+      warning('rotation', 'e2d', name, loc, '0');
+      props.rotation = types.numericLiteral(0);
+    }
+  }
+
+  if (checkPosition) {
+    if (!props.x) {
+      warning('x', 'e2d', name, loc, '0');
+      props.x = types.numericLiteral(0);
+    }
+
+    if (!props.y) {
+      warning('y', 'e2d', name, loc, '0');
+      props.y = types.numericLiteral(0);
+    }
+  }
+
+  if (!props.radiusX) {
+    warning('radiusX', 'e2d', name, loc, '1');
+    props.radiusX = types.numericLiteral(1);
+  }
+
+  if (!props.radiusY) {
+    warning('radiusY', 'e2d', name, loc, '1');
+    props.radiusY = types.numericLiteral(1);
+  }
+};
+
+/***/ },
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(3);
 
 /***/ },
-/* 75 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(2);
 
 /***/ },
-/* 76 */
+/* 78 */
+/***/ function(module, exports, __webpack_require__) {
+
+let warning = __webpack_require__(0);
+
+module.exports = (props, children, loc, types, name) => {
+
+  if (!props.value) {
+    warning('value', 'e2d', name, loc, '1');
+    props.value = types.numericLiteral(1);
+  }
+
+};
+
+/***/ },
+/* 79 */
+/***/ function(module, exports, __webpack_require__) {
+
+let warning = __webpack_require__(0);
+
+module.exports = (props, children, loc, types, name) => {
+
+  if (!props.operationType) {
+    warning('operationType', 'e2d', name, loc, '"source-over"');
+    props.operationType = types.stringLiteral("source-over");
+  }
+
+};
+
+/***/ },
+/* 80 */
+/***/ function(module, exports, __webpack_require__) {
+
+let rect = __webpack_require__(2);
+
+let warning = __webpack_require__(0);
+
+module.exports = (props, children, loc, types, name) => {
+
+  if (!props.id) {
+    warning('id', 'e2d', name, loc, '""');
+    props.id = types.stringLiteral("");
+  }
+  return rect(props, children, loc, types, name);
+};
+
+/***/ },
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2716,7 +2842,7 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 77 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2740,25 +2866,31 @@ module.exports = (props, children, loc, types) => {
 };
 
 /***/ },
-/* 78 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(3);
 
 /***/ },
-/* 79 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(2);
 
 /***/ },
-/* 80 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(4);
 
 /***/ },
-/* 81 */
+/* 86 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(5);
+
+/***/ },
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2775,32 +2907,32 @@ module.exports = (props, children, loc, types) => {
 };
 
 /***/ },
-/* 82 */
+/* 88 */
 /***/ function(module, exports) {
 
 module.exports = require("colors");
 
 /***/ },
-/* 83 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
-let transformAttributes = __webpack_require__(10);
-let removeJSXText = __webpack_require__(9);
-let { basename, extname } = __webpack_require__(12);
+let transformAttributes = __webpack_require__(11);
+let removeJSXText = __webpack_require__(10);
+let { basename, extname } = __webpack_require__(13);
 
 let getName = (name) => basename(name, extname(name));
 //transformers
-let funcContext = __webpack_require__(6);
+let funcContext = __webpack_require__(7);
 let funcs = funcContext.keys().map(getName);
 
 //reconciler
-let reconcilersContext = __webpack_require__(7);
+let reconcilersContext = __webpack_require__(8);
 let reconcilers = reconcilersContext.keys().map(getName);
 
 
 let svgElements = ['path', 'rect', 'ellipse'];
-let customElement = __webpack_require__(5);
-let parsemember = __webpack_require__(8);
+let customElement = __webpack_require__(6);
+let parsemember = __webpack_require__(9);
 
 module.exports = function({ types }) {
 
@@ -2838,7 +2970,7 @@ module.exports = function({ types }) {
         );
       }
     },
-    inherits: __webpack_require__(11)
+    inherits: __webpack_require__(12)
   };
 };
 

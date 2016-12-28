@@ -1,2 +1,2 @@
 
-let g = <createRegularPolygon />
+let g = <hitRect />
