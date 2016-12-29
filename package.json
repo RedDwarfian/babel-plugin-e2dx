@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-e2dx",
-  "version": "1.0.0",
+  "version": "1.0.0-rc.0",
   "description": "Babel transformer for e2d drawing commands",
   "main": "dist/babel-plugin-e2dx.js",
   "scripts": {
