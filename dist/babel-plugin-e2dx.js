@@ -64,15 +64,15 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 89);
+/******/ 	return __webpack_require__(__webpack_require__.s = 103);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-let colors = __webpack_require__(23);
-let colorize = __webpack_require__(24);
+let colors = __webpack_require__(26);
+let colorize = __webpack_require__(27);
 
 module.exports = (parameter, library, functionName, loc, replaceValue) => console.log(`
   ${colors.yellow.bold('WARNING')}: Parameter missing: [${colorize.parse(parameter)}] for [${colorize.parse(`${library}.${functionName}`)}]. Using value [${colorize.parse(replaceValue)}] instead.
@@ -117,10 +117,10 @@ module['exports'] = colors;
 
 colors.themes = {};
 
-var ansiStyles = colors.styles = __webpack_require__(21);
+var ansiStyles = colors.styles = __webpack_require__(24);
 var defineProps = Object.defineProperties;
 
-colors.supportsColor = __webpack_require__(22);
+colors.supportsColor = __webpack_require__(25);
 
 if (typeof colors.enabled === "undefined") {
   colors.enabled = colors.supportsColor;
@@ -250,15 +250,15 @@ var sequencer = function sequencer (map, str) {
 };
 
 // custom formatter methods
-colors.trap = __webpack_require__(15);
-colors.zalgo = __webpack_require__(16);
+colors.trap = __webpack_require__(18);
+colors.zalgo = __webpack_require__(19);
 
 // maps
 colors.maps = {};
-colors.maps.america = __webpack_require__(17);
-colors.maps.zebra = __webpack_require__(20);
-colors.maps.rainbow = __webpack_require__(18);
-colors.maps.random = __webpack_require__(19)
+colors.maps.america = __webpack_require__(20);
+colors.maps.zebra = __webpack_require__(23);
+colors.maps.rainbow = __webpack_require__(21);
+colors.maps.random = __webpack_require__(22)
 
 for (var map in colors.maps) {
   (function(map){
@@ -292,17 +292,35 @@ module.exports = (props, children, loc, types, name) => {
   }
 
   if (!props.width) {
-    warning('width', 'e2d', name, loc, '1');
+    warning('width', 'e2d', name, loc, '0');
     props.width = types.numericLiteral(0);
   }
   if (!props.height) {
-    warning('height', 'e2d', name, loc, '1');
+    warning('height', 'e2d', name, loc, '0');
     props.height = types.numericLiteral(0);
   }
 };
 
 /***/ },
 /* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+let warning = __webpack_require__(0);
+
+module.exports = (props, children, loc, types, name) => {
+  if (!props.x) {
+    warning('x', 'e2d', name, loc, '0');
+    props.x = types.numericLiteral(0);
+  }
+
+  if (!props.y) {
+    warning('y', 'e2d', name, loc, '0');
+    props.y = types.numericLiteral(0);
+  }
+};
+
+/***/ },
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -342,7 +360,22 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 4 */
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+let warning = __webpack_require__(0);
+
+module.exports = (props, children, loc, types, name) => {
+
+  if (!props.angle) {
+    warning('angle', 'e2d', name, loc, '0');
+    props.angle = types.numericLiteral(0);
+  }
+
+};
+
+/***/ },
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -357,7 +390,7 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 5 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -381,7 +414,29 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 6 */
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+let warning = __webpack_require__(0);
+
+module.exports = (props, children, loc, types, name) => {
+
+  if (!props.matrix) {
+    warning('matrix', 'e2d', name, loc, 'identityMatrix');
+    props.matrix = types.arrayExpression([
+      types.numericLiteral(1),
+      types.numericLiteral(0),
+      types.numericLiteral(0),
+      types.numericLiteral(1),
+      types.numericLiteral(0),
+      types.numericLiteral(0)
+    ]);
+  }
+
+};
+
+/***/ },
+/* 9 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, callee, attributes, children) => {
@@ -406,56 +461,56 @@ module.exports = (path, types, callee, attributes, children) => {
 };
 
 /***/ },
-/* 7 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 var map = {
-	"./arc.js": 25,
-	"./arcTo.js": 26,
-	"./beginClip.js": 27,
-	"./beginPath.js": 28,
-	"./bezierCurveTo.js": 29,
-	"./children.js": 30,
-	"./clearRect.js": 31,
-	"./clip.js": 32,
-	"./clipPath.js": 33,
-	"./closePath.js": 34,
-	"./createRegularPolygon.js": 35,
-	"./ellipse.js": 36,
-	"./fill.js": 37,
-	"./fillArc.js": 38,
-	"./fillRect.js": 39,
-	"./fillStyle.js": 40,
-	"./fillText.js": 41,
-	"./globalAlpha.js": 42,
-	"./globalCompositeOperation.js": 43,
-	"./hitRect.js": 44,
-	"./hitRegion.js": 45,
-	"./imageSmoothingEnabled.js": 46,
-	"./lineStyle.js": 47,
-	"./lineTo.js": 48,
-	"./moveTo.js": 49,
-	"./params.js": 50,
-	"./path.js": 51,
-	"./quadraticCurveTo.js": 52,
-	"./rect.js": 53,
-	"./render.js": 54,
-	"./resetTransform.js": 55,
-	"./rotate.js": 56,
-	"./scale.js": 57,
-	"./setTransform.js": 58,
-	"./shadowStyle.js": 59,
-	"./skewX.js": 60,
-	"./skewY.js": 61,
-	"./stroke.js": 62,
-	"./strokeArc.js": 63,
-	"./strokeRect.js": 64,
-	"./strokeStyle.js": 65,
-	"./strokeText.js": 66,
-	"./template.js": 67,
-	"./textStyle.js": 68,
-	"./transform.js": 69,
-	"./translate.js": 70
+	"./arc.js": 28,
+	"./arcTo.js": 29,
+	"./beginClip.js": 30,
+	"./beginPath.js": 31,
+	"./bezierCurveTo.js": 32,
+	"./children.js": 33,
+	"./clearRect.js": 34,
+	"./clip.js": 35,
+	"./clipPath.js": 36,
+	"./closePath.js": 37,
+	"./createRegularPolygon.js": 38,
+	"./ellipse.js": 39,
+	"./fill.js": 40,
+	"./fillArc.js": 41,
+	"./fillRect.js": 42,
+	"./fillStyle.js": 43,
+	"./fillText.js": 44,
+	"./globalAlpha.js": 45,
+	"./globalCompositeOperation.js": 46,
+	"./hitRect.js": 47,
+	"./hitRegion.js": 48,
+	"./imageSmoothingEnabled.js": 49,
+	"./lineStyle.js": 50,
+	"./lineTo.js": 51,
+	"./moveTo.js": 52,
+	"./params.js": 53,
+	"./path.js": 54,
+	"./quadraticCurveTo.js": 55,
+	"./rect.js": 56,
+	"./render.js": 57,
+	"./resetTransform.js": 58,
+	"./rotate.js": 59,
+	"./scale.js": 60,
+	"./setTransform.js": 61,
+	"./shadowStyle.js": 62,
+	"./skewX.js": 63,
+	"./skewY.js": 64,
+	"./stroke.js": 65,
+	"./strokeArc.js": 66,
+	"./strokeRect.js": 67,
+	"./strokeStyle.js": 68,
+	"./strokeText.js": 69,
+	"./template.js": 70,
+	"./textStyle.js": 71,
+	"./transform.js": 72,
+	"./translate.js": 73
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -471,35 +526,49 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 7;
+webpackContext.id = 10;
 
 
 /***/ },
-/* 8 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 var map = {
-	"./arc.js": 3,
-	"./arcTo.js": 71,
-	"./bezierCurveTo.js": 72,
-	"./clearRect.js": 73,
-	"./createRegularPolygon.js": 74,
-	"./ellipse.js": 75,
-	"./fillArc.js": 76,
-	"./fillRect.js": 77,
-	"./fillStyle.js": 4,
-	"./fillText.js": 5,
-	"./globalAlpha.js": 78,
-	"./globalCompositeOperation.js": 79,
-	"./hitRect.js": 80,
-	"./path.js": 81,
+	"./arc.js": 4,
+	"./arcTo.js": 74,
+	"./bezierCurveTo.js": 75,
+	"./clearRect.js": 76,
+	"./createRegularPolygon.js": 77,
+	"./ellipse.js": 78,
+	"./fillArc.js": 79,
+	"./fillRect.js": 80,
+	"./fillStyle.js": 6,
+	"./fillText.js": 7,
+	"./globalAlpha.js": 81,
+	"./globalCompositeOperation.js": 82,
+	"./hitRect.js": 83,
+	"./hitRegion.js": 84,
+	"./imageSmoothingEnabled.js": 85,
+	"./lineStyle.js": 86,
+	"./lineTo.js": 3,
+	"./moveTo.js": 87,
+	"./params.js": 88,
+	"./path.js": 89,
+	"./quadraticCurveTo.js": 90,
 	"./rect.js": 2,
-	"./scale.js": 82,
-	"./strokeArc.js": 83,
-	"./strokeRect.js": 84,
-	"./strokeStyle.js": 85,
-	"./strokeText.js": 86,
-	"./translate.js": 87
+	"./rotate.js": 5,
+	"./scale.js": 91,
+	"./setTransform.js": 8,
+	"./shadowStyle.js": 92,
+	"./skewX.js": 93,
+	"./skewY.js": 94,
+	"./strokeArc.js": 95,
+	"./strokeRect.js": 96,
+	"./strokeStyle.js": 97,
+	"./strokeText.js": 98,
+	"./textStyle.js": 99,
+	"./transform.js": 100,
+	"./translate.js": 101
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -515,11 +584,11 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 8;
+webpackContext.id = 11;
 
 
 /***/ },
-/* 9 */
+/* 12 */
 /***/ function(module, exports) {
 
 
@@ -542,7 +611,7 @@ module.exports = (member, types) => {
 };
 
 /***/ },
-/* 10 */
+/* 13 */
 /***/ function(module, exports) {
 
 module.exports = (children, types) => children.filter(
@@ -552,7 +621,7 @@ module.exports = (children, types) => children.filter(
 );
 
 /***/ },
-/* 11 */
+/* 14 */
 /***/ function(module, exports) {
 
 module.exports = (attributes, types) => attributes.reduce(
@@ -563,19 +632,19 @@ module.exports = (attributes, types) => attributes.reduce(
 {});
 
 /***/ },
-/* 12 */
+/* 15 */
 /***/ function(module, exports) {
 
 module.exports = require("babel-plugin-syntax-jsx");
 
 /***/ },
-/* 13 */
+/* 16 */
 /***/ function(module, exports) {
 
 module.exports = require("path");
 
 /***/ },
-/* 14 */
+/* 17 */
 /***/ function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -584,11 +653,11 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 14;
+webpackEmptyContext.id = 17;
 
 
 /***/ },
-/* 15 */
+/* 18 */
 /***/ function(module, exports) {
 
 module['exports'] = function runTheTrap (text, options) {
@@ -639,7 +708,7 @@ module['exports'] = function runTheTrap (text, options) {
 
 
 /***/ },
-/* 16 */
+/* 19 */
 /***/ function(module, exports) {
 
 // please no
@@ -749,7 +818,7 @@ module['exports'] = function zalgo(text, options) {
 
 
 /***/ },
-/* 17 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 var colors = __webpack_require__(1);
@@ -766,7 +835,7 @@ module['exports'] = (function() {
 })();
 
 /***/ },
-/* 18 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 var colors = __webpack_require__(1);
@@ -785,7 +854,7 @@ module['exports'] = (function () {
 
 
 /***/ },
-/* 19 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 var colors = __webpack_require__(1);
@@ -798,7 +867,7 @@ module['exports'] = (function () {
 })();
 
 /***/ },
-/* 20 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 var colors = __webpack_require__(1);
@@ -808,7 +877,7 @@ module['exports'] = function (letter, i, exploded) {
 };
 
 /***/ },
-/* 21 */
+/* 24 */
 /***/ function(module, exports) {
 
 /*
@@ -890,7 +959,7 @@ Object.keys(codes).forEach(function (key) {
 });
 
 /***/ },
-/* 22 */
+/* 25 */
 /***/ function(module, exports) {
 
 /*
@@ -956,7 +1025,7 @@ module.exports = (function () {
 })();
 
 /***/ },
-/* 23 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 //
@@ -970,7 +1039,7 @@ var colors = __webpack_require__(1);
 module['exports'] = colors;
 
 /***/ },
-/* 24 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = (function() {
@@ -1022,33 +1091,35 @@ module.exports = (function() {
         peg$c6 = { type: "literal", value: "@", description: "\"@\"" },
         peg$c7 = ":",
         peg$c8 = { type: "literal", value: ":", description: "\":\"" },
-        peg$c9 = function(op, num) { return colors.white(op) + (num || ''); },
-        peg$c10 = /^[0-9]/,
-        peg$c11 = { type: "class", value: "[0-9]", description: "[0-9]" },
-        peg$c12 = function() { return colors.green(text()); },
-        peg$c13 = "[",
-        peg$c14 = { type: "literal", value: "[", description: "\"[\"" },
-        peg$c15 = ",",
-        peg$c16 = { type: "literal", value: ",", description: "\",\"" },
-        peg$c17 = "]",
-        peg$c18 = { type: "literal", value: "]", description: "\"]\"" },
-        peg$c19 = function(point1, point2) {
+        peg$c9 = "{}",
+        peg$c10 = { type: "literal", value: "{}", description: "\"{}\"" },
+        peg$c11 = function(op, num) { return colors.white(op) + (num || ''); },
+        peg$c12 = /^[0-9]/,
+        peg$c13 = { type: "class", value: "[0-9]", description: "[0-9]" },
+        peg$c14 = function() { return colors.green(text()); },
+        peg$c15 = "[",
+        peg$c16 = { type: "literal", value: "[", description: "\"[\"" },
+        peg$c17 = ",",
+        peg$c18 = { type: "literal", value: ",", description: "\",\"" },
+        peg$c19 = "]",
+        peg$c20 = { type: "literal", value: "]", description: "\"]\"" },
+        peg$c21 = function(point1, point2) {
           return colors.yellow("(") + point1 + colors.yellow(', ') + point2 + colors.yellow(")");
         },
-        peg$c20 = "\"",
-        peg$c21 = { type: "literal", value: "\"", description: "\"\\\"\"" },
-        peg$c22 = "\\\"",
-        peg$c23 = { type: "literal", value: "\\\"", description: "\"\\\\\\\"\"" },
-        peg$c24 = /^[^"\n\r]/,
-        peg$c25 = { type: "class", value: "[^\"\\n\\r]", description: "[^\"\\n\\r]" },
-        peg$c26 = "'",
-        peg$c27 = { type: "literal", value: "'", description: "\"'\"" },
-        peg$c28 = "\\'",
-        peg$c29 = { type: "literal", value: "\\'", description: "\"\\\\'\"" },
-        peg$c30 = /^[^'\n\r]/,
-        peg$c31 = { type: "class", value: "[^'\\n\\r]", description: "[^'\\n\\r]" },
-        peg$c32 = /^[\r\n\t ]/,
-        peg$c33 = { type: "class", value: "[\\r\\n\\t ]", description: "[\\r\\n\\t ]" },
+        peg$c22 = "\"",
+        peg$c23 = { type: "literal", value: "\"", description: "\"\\\"\"" },
+        peg$c24 = "\\\"",
+        peg$c25 = { type: "literal", value: "\\\"", description: "\"\\\\\\\"\"" },
+        peg$c26 = /^[^"\n\r]/,
+        peg$c27 = { type: "class", value: "[^\"\\n\\r]", description: "[^\"\\n\\r]" },
+        peg$c28 = "'",
+        peg$c29 = { type: "literal", value: "'", description: "\"'\"" },
+        peg$c30 = "\\'",
+        peg$c31 = { type: "literal", value: "\\'", description: "\"\\\\'\"" },
+        peg$c32 = /^[^'\n\r]/,
+        peg$c33 = { type: "class", value: "[^'\\n\\r]", description: "[^'\\n\\r]" },
+        peg$c34 = /^[\r\n\t ]/,
+        peg$c35 = { type: "class", value: "[\\r\\n\\t ]", description: "[\\r\\n\\t ]" },
 
         peg$currPos          = 0,
         peg$savedPos         = 0,
@@ -1242,9 +1313,12 @@ module.exports = (function() {
       if (s0 === peg$FAILED) {
         s0 = peg$parseIdentifier();
         if (s0 === peg$FAILED) {
-          s0 = peg$parseDoubleQuotedString();
+          s0 = peg$parseOperator();
           if (s0 === peg$FAILED) {
-            s0 = peg$parseNumber();
+            s0 = peg$parseDoubleQuotedString();
+            if (s0 === peg$FAILED) {
+              s0 = peg$parseNumber();
+            }
           }
         }
       }
@@ -1323,6 +1397,15 @@ module.exports = (function() {
           s1 = peg$FAILED;
           if (peg$silentFails === 0) { peg$fail(peg$c8); }
         }
+        if (s1 === peg$FAILED) {
+          if (input.substr(peg$currPos, 2) === peg$c9) {
+            s1 = peg$c9;
+            peg$currPos += 2;
+          } else {
+            s1 = peg$FAILED;
+            if (peg$silentFails === 0) { peg$fail(peg$c10); }
+          }
+        }
       }
       if (s1 !== peg$FAILED) {
         s2 = peg$parseNumber();
@@ -1331,7 +1414,7 @@ module.exports = (function() {
         }
         if (s2 !== peg$FAILED) {
           peg$savedPos = s0;
-          s1 = peg$c9(s1, s2);
+          s1 = peg$c11(s1, s2);
           s0 = s1;
         } else {
           peg$currPos = s0;
@@ -1350,26 +1433,26 @@ module.exports = (function() {
 
       s0 = peg$currPos;
       s1 = [];
-      if (peg$c10.test(input.charAt(peg$currPos))) {
+      if (peg$c12.test(input.charAt(peg$currPos))) {
         s2 = input.charAt(peg$currPos);
         peg$currPos++;
       } else {
         s2 = peg$FAILED;
-        if (peg$silentFails === 0) { peg$fail(peg$c11); }
+        if (peg$silentFails === 0) { peg$fail(peg$c13); }
       }
       while (s2 !== peg$FAILED) {
         s1.push(s2);
-        if (peg$c10.test(input.charAt(peg$currPos))) {
+        if (peg$c12.test(input.charAt(peg$currPos))) {
           s2 = input.charAt(peg$currPos);
           peg$currPos++;
         } else {
           s2 = peg$FAILED;
-          if (peg$silentFails === 0) { peg$fail(peg$c11); }
+          if (peg$silentFails === 0) { peg$fail(peg$c13); }
         }
       }
       if (s1 !== peg$FAILED) {
         peg$savedPos = s0;
-        s1 = peg$c12();
+        s1 = peg$c14();
       }
       s0 = s1;
 
@@ -1381,11 +1464,11 @@ module.exports = (function() {
 
       s0 = peg$currPos;
       if (input.charCodeAt(peg$currPos) === 91) {
-        s1 = peg$c13;
+        s1 = peg$c15;
         peg$currPos++;
       } else {
         s1 = peg$FAILED;
-        if (peg$silentFails === 0) { peg$fail(peg$c14); }
+        if (peg$silentFails === 0) { peg$fail(peg$c16); }
       }
       if (s1 !== peg$FAILED) {
         s2 = peg$parse_();
@@ -1398,11 +1481,11 @@ module.exports = (function() {
             s4 = peg$parse_();
             if (s4 !== peg$FAILED) {
               if (input.charCodeAt(peg$currPos) === 44) {
-                s5 = peg$c15;
+                s5 = peg$c17;
                 peg$currPos++;
               } else {
                 s5 = peg$FAILED;
-                if (peg$silentFails === 0) { peg$fail(peg$c16); }
+                if (peg$silentFails === 0) { peg$fail(peg$c18); }
               }
               if (s5 !== peg$FAILED) {
                 s6 = peg$parse_();
@@ -1415,15 +1498,15 @@ module.exports = (function() {
                     s8 = peg$parse_();
                     if (s8 !== peg$FAILED) {
                       if (input.charCodeAt(peg$currPos) === 93) {
-                        s9 = peg$c17;
+                        s9 = peg$c19;
                         peg$currPos++;
                       } else {
                         s9 = peg$FAILED;
-                        if (peg$silentFails === 0) { peg$fail(peg$c18); }
+                        if (peg$silentFails === 0) { peg$fail(peg$c20); }
                       }
                       if (s9 !== peg$FAILED) {
                         peg$savedPos = s0;
-                        s1 = peg$c19(s3, s7);
+                        s1 = peg$c21(s3, s7);
                         s0 = s1;
                       } else {
                         peg$currPos = s0;
@@ -1481,60 +1564,60 @@ module.exports = (function() {
 
       s0 = peg$currPos;
       if (input.charCodeAt(peg$currPos) === 34) {
-        s1 = peg$c20;
+        s1 = peg$c22;
         peg$currPos++;
       } else {
         s1 = peg$FAILED;
-        if (peg$silentFails === 0) { peg$fail(peg$c21); }
+        if (peg$silentFails === 0) { peg$fail(peg$c23); }
       }
       if (s1 !== peg$FAILED) {
         s2 = [];
-        if (input.substr(peg$currPos, 2) === peg$c22) {
-          s3 = peg$c22;
+        if (input.substr(peg$currPos, 2) === peg$c24) {
+          s3 = peg$c24;
           peg$currPos += 2;
         } else {
           s3 = peg$FAILED;
-          if (peg$silentFails === 0) { peg$fail(peg$c23); }
+          if (peg$silentFails === 0) { peg$fail(peg$c25); }
         }
         if (s3 === peg$FAILED) {
-          if (peg$c24.test(input.charAt(peg$currPos))) {
+          if (peg$c26.test(input.charAt(peg$currPos))) {
             s3 = input.charAt(peg$currPos);
             peg$currPos++;
           } else {
             s3 = peg$FAILED;
-            if (peg$silentFails === 0) { peg$fail(peg$c25); }
+            if (peg$silentFails === 0) { peg$fail(peg$c27); }
           }
         }
         while (s3 !== peg$FAILED) {
           s2.push(s3);
-          if (input.substr(peg$currPos, 2) === peg$c22) {
-            s3 = peg$c22;
+          if (input.substr(peg$currPos, 2) === peg$c24) {
+            s3 = peg$c24;
             peg$currPos += 2;
           } else {
             s3 = peg$FAILED;
-            if (peg$silentFails === 0) { peg$fail(peg$c23); }
+            if (peg$silentFails === 0) { peg$fail(peg$c25); }
           }
           if (s3 === peg$FAILED) {
-            if (peg$c24.test(input.charAt(peg$currPos))) {
+            if (peg$c26.test(input.charAt(peg$currPos))) {
               s3 = input.charAt(peg$currPos);
               peg$currPos++;
             } else {
               s3 = peg$FAILED;
-              if (peg$silentFails === 0) { peg$fail(peg$c25); }
+              if (peg$silentFails === 0) { peg$fail(peg$c27); }
             }
           }
         }
         if (s2 !== peg$FAILED) {
           if (input.charCodeAt(peg$currPos) === 34) {
-            s3 = peg$c20;
+            s3 = peg$c22;
             peg$currPos++;
           } else {
             s3 = peg$FAILED;
-            if (peg$silentFails === 0) { peg$fail(peg$c21); }
+            if (peg$silentFails === 0) { peg$fail(peg$c23); }
           }
           if (s3 !== peg$FAILED) {
             peg$savedPos = s0;
-            s1 = peg$c12();
+            s1 = peg$c14();
             s0 = s1;
           } else {
             peg$currPos = s0;
@@ -1560,60 +1643,60 @@ module.exports = (function() {
 
       s0 = peg$currPos;
       if (input.charCodeAt(peg$currPos) === 39) {
-        s1 = peg$c26;
+        s1 = peg$c28;
         peg$currPos++;
       } else {
         s1 = peg$FAILED;
-        if (peg$silentFails === 0) { peg$fail(peg$c27); }
+        if (peg$silentFails === 0) { peg$fail(peg$c29); }
       }
       if (s1 !== peg$FAILED) {
         s2 = [];
-        if (input.substr(peg$currPos, 2) === peg$c28) {
-          s3 = peg$c28;
+        if (input.substr(peg$currPos, 2) === peg$c30) {
+          s3 = peg$c30;
           peg$currPos += 2;
         } else {
           s3 = peg$FAILED;
-          if (peg$silentFails === 0) { peg$fail(peg$c29); }
+          if (peg$silentFails === 0) { peg$fail(peg$c31); }
         }
         if (s3 === peg$FAILED) {
-          if (peg$c30.test(input.charAt(peg$currPos))) {
+          if (peg$c32.test(input.charAt(peg$currPos))) {
             s3 = input.charAt(peg$currPos);
             peg$currPos++;
           } else {
             s3 = peg$FAILED;
-            if (peg$silentFails === 0) { peg$fail(peg$c31); }
+            if (peg$silentFails === 0) { peg$fail(peg$c33); }
           }
         }
         while (s3 !== peg$FAILED) {
           s2.push(s3);
-          if (input.substr(peg$currPos, 2) === peg$c28) {
-            s3 = peg$c28;
+          if (input.substr(peg$currPos, 2) === peg$c30) {
+            s3 = peg$c30;
             peg$currPos += 2;
           } else {
             s3 = peg$FAILED;
-            if (peg$silentFails === 0) { peg$fail(peg$c29); }
+            if (peg$silentFails === 0) { peg$fail(peg$c31); }
           }
           if (s3 === peg$FAILED) {
-            if (peg$c30.test(input.charAt(peg$currPos))) {
+            if (peg$c32.test(input.charAt(peg$currPos))) {
               s3 = input.charAt(peg$currPos);
               peg$currPos++;
             } else {
               s3 = peg$FAILED;
-              if (peg$silentFails === 0) { peg$fail(peg$c31); }
+              if (peg$silentFails === 0) { peg$fail(peg$c33); }
             }
           }
         }
         if (s2 !== peg$FAILED) {
           if (input.charCodeAt(peg$currPos) === 39) {
-            s3 = peg$c26;
+            s3 = peg$c28;
             peg$currPos++;
           } else {
             s3 = peg$FAILED;
-            if (peg$silentFails === 0) { peg$fail(peg$c27); }
+            if (peg$silentFails === 0) { peg$fail(peg$c29); }
           }
           if (s3 !== peg$FAILED) {
             peg$savedPos = s0;
-            s1 = peg$c12();
+            s1 = peg$c14();
             s0 = s1;
           } else {
             peg$currPos = s0;
@@ -1635,21 +1718,21 @@ module.exports = (function() {
       var s0, s1;
 
       s0 = [];
-      if (peg$c32.test(input.charAt(peg$currPos))) {
+      if (peg$c34.test(input.charAt(peg$currPos))) {
         s1 = input.charAt(peg$currPos);
         peg$currPos++;
       } else {
         s1 = peg$FAILED;
-        if (peg$silentFails === 0) { peg$fail(peg$c33); }
+        if (peg$silentFails === 0) { peg$fail(peg$c35); }
       }
       while (s1 !== peg$FAILED) {
         s0.push(s1);
-        if (peg$c32.test(input.charAt(peg$currPos))) {
+        if (peg$c34.test(input.charAt(peg$currPos))) {
           s1 = input.charAt(peg$currPos);
           peg$currPos++;
         } else {
           s1 = peg$FAILED;
-          if (peg$silentFails === 0) { peg$fail(peg$c33); }
+          if (peg$silentFails === 0) { peg$fail(peg$c35); }
         }
       }
 
@@ -1657,7 +1740,7 @@ module.exports = (function() {
     }
 
 
-      let colors = __webpack_require__(88);
+      let colors = __webpack_require__(102);
 
 
     peg$result = peg$startRuleFunction();
@@ -1687,7 +1770,7 @@ module.exports = (function() {
 })()
 
 /***/ },
-/* 25 */
+/* 28 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1718,7 +1801,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 26 */
+/* 29 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1738,7 +1821,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 27 */
+/* 30 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1755,7 +1838,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 28 */
+/* 31 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1772,7 +1855,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 29 */
+/* 32 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1792,7 +1875,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 30 */
+/* 33 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1810,7 +1893,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 31 */
+/* 34 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1829,7 +1912,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 32 */
+/* 35 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1847,7 +1930,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 33 */
+/* 36 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1864,7 +1947,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 34 */
+/* 37 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1881,7 +1964,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 35 */
+/* 38 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1899,7 +1982,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 36 */
+/* 39 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1936,7 +2019,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 37 */
+/* 40 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1953,7 +2036,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 38 */
+/* 41 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -1985,7 +2068,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 39 */
+/* 42 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2004,7 +2087,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 40 */
+/* 43 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2023,7 +2106,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 41 */
+/* 44 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2052,7 +2135,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 42 */
+/* 45 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2071,7 +2154,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 43 */
+/* 46 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2090,7 +2173,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 44 */
+/* 47 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2109,7 +2192,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 45 */
+/* 48 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2128,7 +2211,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 46 */
+/* 49 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2147,7 +2230,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 47 */
+/* 50 */
 /***/ function(module, exports) {
 
 let props = ['lineWidth', 'lineCap', 'lineJoin', 'miterLimit', 'lineDash', 'lineDashOffset'];
@@ -2180,7 +2263,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 48 */
+/* 51 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2199,7 +2282,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 49 */
+/* 52 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2219,7 +2302,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 50 */
+/* 53 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2237,7 +2320,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 51 */
+/* 54 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2255,7 +2338,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 52 */
+/* 55 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2274,7 +2357,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 53 */
+/* 56 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2293,7 +2376,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 54 */
+/* 57 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2312,7 +2395,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 55 */
+/* 58 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2330,7 +2413,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 56 */
+/* 59 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2348,7 +2431,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 57 */
+/* 60 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2365,7 +2448,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 58 */
+/* 61 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2384,7 +2467,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 59 */
+/* 62 */
 /***/ function(module, exports) {
 
 let props = ['shadowBlur', 'shadowColor', 'shadowOffsetX', 'shadowOffsetY'];
@@ -2417,7 +2500,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 60 */
+/* 63 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2435,7 +2518,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 61 */
+/* 64 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2453,7 +2536,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 62 */
+/* 65 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2470,7 +2553,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 63 */
+/* 66 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2502,7 +2585,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 64 */
+/* 67 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2521,7 +2604,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 65 */
+/* 68 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2540,7 +2623,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 66 */
+/* 69 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2569,7 +2652,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 67 */
+/* 70 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2587,10 +2670,10 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 68 */
+/* 71 */
 /***/ function(module, exports) {
 
-let props = ['font', 'textAlign', 'textBaseline', 'direction']
+let props = ['font', 'textAlign', 'textBaseline', 'direction'];
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression,
@@ -2621,7 +2704,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 69 */
+/* 72 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2640,7 +2723,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 70 */
+/* 73 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2657,7 +2740,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 71 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2675,7 +2758,7 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 72 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2692,13 +2775,13 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 73 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(2);
 
 /***/ },
-/* 74 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2721,7 +2804,7 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 75 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2770,19 +2853,19 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 76 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(3);
+module.exports = __webpack_require__(4);
 
 /***/ },
-/* 77 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(2);
 
 /***/ },
-/* 78 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2797,7 +2880,7 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 79 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2812,7 +2895,7 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 80 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 let rect = __webpack_require__(2);
@@ -2829,7 +2912,86 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 81 */
+/* 84 */
+/***/ function(module, exports, __webpack_require__) {
+
+
+let warning = __webpack_require__(0);
+
+module.exports = (props, children, loc, types, name) => {
+
+  if (!props.id) {
+    warning('id', 'e2d', name, loc, '""');
+    props.id = types.stringLiteral("");
+  }
+
+  if (!props.region) {
+    warning('region', 'e2d', name, loc, "undefined");
+    props.region = types.unaryExpression("void", types.numericLiteral(0));
+  }
+};
+
+/***/ },
+/* 85 */
+/***/ function(module, exports, __webpack_require__) {
+
+let warning = __webpack_require__(0);
+
+module.exports = (props, children, loc, types, name) => {
+
+  if (!props.value) {
+    warning('value', 'e2d', name, loc, 'true');
+    props.value = types.booleanLiteral(true);
+  }
+
+};
+
+/***/ },
+/* 86 */
+/***/ function(module, exports, __webpack_require__) {
+
+let lineStyleProps = ['lineWidth', 'lineCap', 'lineJoin', 'miterLimit', 'lineDash', 'lineDashOffset'];
+
+let warning = __webpack_require__(0);
+
+module.exports = (props, children, loc, types, name) => {
+
+  if (!props.style) {
+    let hasAProp = lineStyleProps.reduce((left, right) => left || !!props[right], false);
+
+    if (!hasAProp) {
+      warning('style', 'e2d', name, loc, '{}');
+      props.style = types.objectExpression([]);
+    }
+  }
+
+};
+
+/***/ },
+/* 87 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(3);
+
+/***/ },
+/* 88 */
+/***/ function(module, exports, __webpack_require__) {
+
+let warning = __webpack_require__(0);
+module.exports = (props, children, loc, types, name) => {
+
+  if (!props.func) {
+    warning('func', 'e2t', name, loc, 'defaultFunc');
+    props.func = types.arrowFunctionExpression(
+      [types.identifier('props'), types.identifier('children')],
+      types.identifier('children')
+    );
+  }
+  
+};
+
+/***/ },
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2842,97 +3004,144 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 82 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
-module.exports = (props, children, loc, types) => {
+module.exports = (props, children, loc, types, name) => {
+  ['cpx', 'cpy', 'x', 'y'].forEach(
+    (prop) => {
+      if (!props[prop]) {
+        warning(prop, 'e2d', name, loc, '0');
+        props[prop] = types.numericLiteral(0);
+      }
+    }
+  );
+};
 
-  if (props.value || (props.x && props.y)) {
-    return;
-  }
+/***/ },
+/* 91 */
+/***/ function(module, exports, __webpack_require__) {
 
-  if (!props.x) {
-    warning('x', 'e2d', 'scale', loc, 'Replaced parameter [x] with value [1]');
-    props.x = types.numericLiteral(1);
-  }
+let warning = __webpack_require__(0);
 
-  if (!props.y) {
-    warning('y', 'e2d', 'scale', loc, 'Replaced parameter [y] with value [1]');
-    props.y = types.numericLiteral(1);
+module.exports = __webpack_require__(3);
+
+/***/ },
+/* 92 */
+/***/ function(module, exports) {
+
+let shadowStyleProps = ['shadowBlur', 'shadowColor', 'shadowOffsetX', 'shadowOffsetY'];
+
+module.exports = (props, children, loc, types, name) => {
+
+  if (!props.style) {
+    let hasAProp = shadowStyleProps.reduce((left, right) => left || !!props[right], false);
+
+    if (!hasAProp) {
+      warning('style', 'e2d', name, loc, '{}');
+      props.style = types.objectExpression([]);
+    }
   }
 
 };
 
 /***/ },
-/* 83 */
-/***/ function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(3);
-
-/***/ },
-/* 84 */
-/***/ function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(2);
-
-/***/ },
-/* 85 */
-/***/ function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(4);
-
-/***/ },
-/* 86 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(5);
 
 /***/ },
-/* 87 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
-let warning = __webpack_require__(0);
-module.exports = (props, children, loc, types) => {
-  if (!props.x) {
-    warning('x', 'e2d', 'translate', loc, '0');
-    props.x = types.numericLiteral(0);
+module.exports = __webpack_require__(5);
+
+/***/ },
+/* 95 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(4);
+
+/***/ },
+/* 96 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(2);
+
+/***/ },
+/* 97 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(6);
+
+/***/ },
+/* 98 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(7);
+
+/***/ },
+/* 99 */
+/***/ function(module, exports) {
+
+let textStyleProps = ['font', 'textAlign', 'textBaseline', 'direction'];
+
+module.exports = (props, children, loc, types, name) => {
+
+  if (!props.style) {
+    let hasAProp = textStyleProps.reduce((left, right) => left || !!props[right], false);
+
+    if (!hasAProp) {
+      warning('style', 'e2d', name, loc, '{}');
+      props.style = types.objectExpression([]);
+    }
   }
 
-  if (!props.y) {
-    warning('y', 'e2d', 'translate', loc, '0');
-    props.y = types.numericLiteral(0);
-  }
 };
 
 /***/ },
-/* 88 */
+/* 100 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(8);
+
+/***/ },
+/* 101 */
+/***/ function(module, exports, __webpack_require__) {
+
+let warning = __webpack_require__(0);
+module.exports = __webpack_require__(3);
+
+/***/ },
+/* 102 */
 /***/ function(module, exports) {
 
 module.exports = require("colors");
 
 /***/ },
-/* 89 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
-let transformAttributes = __webpack_require__(11);
-let removeJSXText = __webpack_require__(10);
-let { basename, extname } = __webpack_require__(13);
+let transformAttributes = __webpack_require__(14);
+let removeJSXText = __webpack_require__(13);
+let { basename, extname } = __webpack_require__(16);
 
 let getName = (name) => basename(name, extname(name));
 //transformers
-let funcContext = __webpack_require__(7);
+let funcContext = __webpack_require__(10);
 let funcs = funcContext.keys().map(getName);
 
 //reconciler
-let reconcilersContext = __webpack_require__(8);
+let reconcilersContext = __webpack_require__(11);
 let reconcilers = reconcilersContext.keys().map(getName);
 
 
 let svgElements = ['path', 'rect', 'ellipse'];
-let customElement = __webpack_require__(6);
-let parsemember = __webpack_require__(9);
+let customElement = __webpack_require__(9);
+let parsemember = __webpack_require__(12);
 
 module.exports = function({ types }) {
 
@@ -2970,7 +3179,7 @@ module.exports = function({ types }) {
         );
       }
     },
-    inherits: __webpack_require__(12)
+    inherits: __webpack_require__(15)
   };
 };
 

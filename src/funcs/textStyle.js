@@ -1,4 +1,4 @@
-let props = ['font', 'textAlign', 'textBaseline', 'direction']
+let props = ['font', 'textAlign', 'textBaseline', 'direction'];
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression,
