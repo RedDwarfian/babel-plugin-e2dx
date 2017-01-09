@@ -11,13 +11,13 @@ An example `.babelrc` file will look like this
 ```json
 {
   "plugins": [
-    ["e2dx", { "ignoreSVG": false }]
+    ["e2dx", { "ignoreSVG": false, "react": false }]
   ],
   "presets": ["es2015", "es2015-loose", "react"]
 }
 ```
 
-Ignoring SVG means that the `path`, `ellipse`, and `rect` elements will not be converted and must be called manually. For example:
+`ignoreSVG` means that the `path`, `ellipse`, and `rect` elements will not be converted and must be called manually. For example:
 
 ```javascript
 import e2d from 'e2d';
@@ -25,14 +25,13 @@ import e2d from 'e2d';
 let strokeRect = [e2d.path(e2d.rect(width, height)), <stroke />];
 ```
 
+Setting `react` to `true` means that custom `template`s will not be transpiled and will default to `react` elements when using `babel-preset-react`.
+
 ## Syntactic Whitespace and JSXText
 
-All syntactic whitespace and `JSXText` elements between declared elements is ignored and `babel` will mangle the function calls to make them harder to read when navigating and debugging e2d function calls.
-
+All syntactic whitespace and `JSXText` elements between transpiled elements are ignored and `babel` will mangle the function calls to make them harder to read when navigating and debugging e2d function calls.
 
 # Elements
-
-TODO: TOC
 
 ## Arc
 
@@ -499,24 +498,32 @@ See [mdn: path](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRendering
 </path>
 ```
 
-## placeHolder
+## children
 
-This element is a placeholder for a template `wrapper`.  This is useful for instructions that are static and have children that are variable.  The `placeHolder` element has no parameters.
+This element is a placeholder for a `template`.  This is useful for instructions that are static and have children that are variable.  The `children` element has no parameters.
+
+This also requires a `peerDependency` to `e2t`.
 
 ```javascript
-let absoluteCenter = e2d.createWrapper(
+import e2t from 'e2t';
+import e2d from 'e2d';
+
+let absoluteCenter = <template>
   <translate x={width * 0.5} y={height * 0.5}>
-    <placeHolder />
+    <children />
   </translate>
+</template>;
 );
 
 //this is equivalent to
-let absoluteCenter = (...children) => <translate x={width * 0.5} y={height * 0.5}>
-  {...children}
-</translate>;
+let absoluteCenter = e2t.template(
+  e2d.translate(width * 0.5, height * 0.5,
+    e2t.children()
+  )
+);
 ```
 
-There are some additional optimizations that `e2d` can make during `wrapper` creation, and is a quick shorthand for a common use pattern.
+There are some additional optimizations that `e2d` can make during `template` creation, and is a quick shorthand for a common use pattern.
 
 ## quadraticCurveTo
 

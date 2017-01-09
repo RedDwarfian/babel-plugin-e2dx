@@ -64,7 +64,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 103);
+/******/ 	return __webpack_require__(__webpack_require__.s = 105);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -476,41 +476,42 @@ var map = {
 	"./clipPath.js": 36,
 	"./closePath.js": 37,
 	"./createRegularPolygon.js": 38,
-	"./ellipse.js": 39,
-	"./fill.js": 40,
-	"./fillArc.js": 41,
-	"./fillRect.js": 42,
-	"./fillStyle.js": 43,
-	"./fillText.js": 44,
-	"./globalAlpha.js": 45,
-	"./globalCompositeOperation.js": 46,
-	"./hitRect.js": 47,
-	"./hitRegion.js": 48,
-	"./imageSmoothingEnabled.js": 49,
-	"./lineStyle.js": 50,
-	"./lineTo.js": 51,
-	"./moveTo.js": 52,
-	"./params.js": 53,
-	"./path.js": 54,
-	"./quadraticCurveTo.js": 55,
-	"./rect.js": 56,
-	"./render.js": 57,
-	"./resetTransform.js": 58,
-	"./rotate.js": 59,
-	"./scale.js": 60,
-	"./setTransform.js": 61,
-	"./shadowStyle.js": 62,
-	"./skewX.js": 63,
-	"./skewY.js": 64,
-	"./stroke.js": 65,
-	"./strokeArc.js": 66,
-	"./strokeRect.js": 67,
-	"./strokeStyle.js": 68,
-	"./strokeText.js": 69,
-	"./template.js": 70,
-	"./textStyle.js": 71,
-	"./transform.js": 72,
-	"./translate.js": 73
+	"./drawImage.js": 39,
+	"./ellipse.js": 40,
+	"./fill.js": 41,
+	"./fillArc.js": 42,
+	"./fillRect.js": 43,
+	"./fillStyle.js": 44,
+	"./fillText.js": 45,
+	"./globalAlpha.js": 46,
+	"./globalCompositeOperation.js": 47,
+	"./hitRect.js": 48,
+	"./hitRegion.js": 49,
+	"./imageSmoothingEnabled.js": 50,
+	"./lineStyle.js": 51,
+	"./lineTo.js": 52,
+	"./moveTo.js": 53,
+	"./params.js": 54,
+	"./path.js": 55,
+	"./quadraticCurveTo.js": 56,
+	"./rect.js": 57,
+	"./render.js": 58,
+	"./resetTransform.js": 59,
+	"./rotate.js": 60,
+	"./scale.js": 61,
+	"./setTransform.js": 62,
+	"./shadowStyle.js": 63,
+	"./skewX.js": 64,
+	"./skewY.js": 65,
+	"./stroke.js": 66,
+	"./strokeArc.js": 67,
+	"./strokeRect.js": 68,
+	"./strokeStyle.js": 69,
+	"./strokeText.js": 70,
+	"./template.js": 71,
+	"./textStyle.js": 72,
+	"./transform.js": 73,
+	"./translate.js": 74
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -535,40 +536,41 @@ webpackContext.id = 10;
 
 var map = {
 	"./arc.js": 4,
-	"./arcTo.js": 74,
-	"./bezierCurveTo.js": 75,
-	"./clearRect.js": 76,
-	"./createRegularPolygon.js": 77,
-	"./ellipse.js": 78,
-	"./fillArc.js": 79,
-	"./fillRect.js": 80,
+	"./arcTo.js": 75,
+	"./bezierCurveTo.js": 76,
+	"./clearRect.js": 77,
+	"./createRegularPolygon.js": 78,
+	"./drawImage.js": 79,
+	"./ellipse.js": 80,
+	"./fillArc.js": 81,
+	"./fillRect.js": 82,
 	"./fillStyle.js": 6,
 	"./fillText.js": 7,
-	"./globalAlpha.js": 81,
-	"./globalCompositeOperation.js": 82,
-	"./hitRect.js": 83,
-	"./hitRegion.js": 84,
-	"./imageSmoothingEnabled.js": 85,
-	"./lineStyle.js": 86,
+	"./globalAlpha.js": 83,
+	"./globalCompositeOperation.js": 84,
+	"./hitRect.js": 85,
+	"./hitRegion.js": 86,
+	"./imageSmoothingEnabled.js": 87,
+	"./lineStyle.js": 88,
 	"./lineTo.js": 3,
-	"./moveTo.js": 87,
-	"./params.js": 88,
-	"./path.js": 89,
-	"./quadraticCurveTo.js": 90,
+	"./moveTo.js": 89,
+	"./params.js": 90,
+	"./path.js": 91,
+	"./quadraticCurveTo.js": 92,
 	"./rect.js": 2,
 	"./rotate.js": 5,
-	"./scale.js": 91,
+	"./scale.js": 93,
 	"./setTransform.js": 8,
-	"./shadowStyle.js": 92,
-	"./skewX.js": 93,
-	"./skewY.js": 94,
-	"./strokeArc.js": 95,
-	"./strokeRect.js": 96,
-	"./strokeStyle.js": 97,
-	"./strokeText.js": 98,
-	"./textStyle.js": 99,
-	"./transform.js": 100,
-	"./translate.js": 101
+	"./shadowStyle.js": 94,
+	"./skewX.js": 95,
+	"./skewY.js": 96,
+	"./strokeArc.js": 97,
+	"./strokeRect.js": 98,
+	"./strokeStyle.js": 99,
+	"./strokeText.js": 100,
+	"./textStyle.js": 101,
+	"./transform.js": 102,
+	"./translate.js": 103
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -1740,7 +1742,7 @@ module.exports = (function() {
     }
 
 
-      let colors = __webpack_require__(102);
+      let colors = __webpack_require__(104);
 
 
     peg$result = peg$startRuleFunction();
@@ -1987,6 +1989,38 @@ module.exports = (path, types, attributes, children) => {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
+  let { img, x, y, width, height, sx, sy, sWidth, sHeight } = attributes;
+
+  let args = [];
+  if (x || y) {
+    args.push(x, y);
+  }
+  if ((x || y) && (width || height)) {
+    args.push(width, height);
+  }
+
+  if (sx || sy || sWidth || sHeight) {
+    args.unshift(sx, sy, sWidth, sHeight);
+  }
+
+  args.unshift(img);
+  return path.replaceWith(
+    callExpression(
+      memberExpression(
+        identifier('e2d'),
+        identifier('drawImage')
+      ),
+      args
+    )
+  );
+};
+
+/***/ },
+/* 40 */
+/***/ function(module, exports) {
+
+module.exports = (path, types, attributes, children) => {
+  let { identifier, memberExpression, callExpression } = types;
   let { x, y, radiusX, radiusY, rotation, startAngle, endAngle, anticlockwise } = attributes;
   let args = [radiusX, radiusY];
 
@@ -2019,7 +2053,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 40 */
+/* 41 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2036,7 +2070,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 41 */
+/* 42 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2068,7 +2102,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 42 */
+/* 43 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2087,7 +2121,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 43 */
+/* 44 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2106,7 +2140,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 44 */
+/* 45 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2135,7 +2169,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 45 */
+/* 46 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2154,7 +2188,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 46 */
+/* 47 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2173,7 +2207,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 47 */
+/* 48 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2192,7 +2226,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 48 */
+/* 49 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2211,7 +2245,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 49 */
+/* 50 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2230,7 +2264,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 50 */
+/* 51 */
 /***/ function(module, exports) {
 
 let props = ['lineWidth', 'lineCap', 'lineJoin', 'miterLimit', 'lineDash', 'lineDashOffset'];
@@ -2263,7 +2297,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 51 */
+/* 52 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2282,7 +2316,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 52 */
+/* 53 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2302,7 +2336,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 53 */
+/* 54 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2320,7 +2354,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 54 */
+/* 55 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2338,7 +2372,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 55 */
+/* 56 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2357,7 +2391,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 56 */
+/* 57 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2376,7 +2410,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 57 */
+/* 58 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2395,7 +2429,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 58 */
+/* 59 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2413,7 +2447,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 59 */
+/* 60 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2431,7 +2465,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 60 */
+/* 61 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2448,7 +2482,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 61 */
+/* 62 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2467,7 +2501,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 62 */
+/* 63 */
 /***/ function(module, exports) {
 
 let props = ['shadowBlur', 'shadowColor', 'shadowOffsetX', 'shadowOffsetY'];
@@ -2500,7 +2534,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 63 */
+/* 64 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2518,7 +2552,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 64 */
+/* 65 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2536,7 +2570,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 65 */
+/* 66 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2553,7 +2587,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 66 */
+/* 67 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2585,7 +2619,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 67 */
+/* 68 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2604,7 +2638,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 68 */
+/* 69 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2623,7 +2657,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 69 */
+/* 70 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2652,7 +2686,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 70 */
+/* 71 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2670,7 +2704,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 71 */
+/* 72 */
 /***/ function(module, exports) {
 
 let props = ['font', 'textAlign', 'textBaseline', 'direction'];
@@ -2704,7 +2738,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 72 */
+/* 73 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2723,7 +2757,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 73 */
+/* 74 */
 /***/ function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
@@ -2740,7 +2774,7 @@ module.exports = (path, types, attributes, children) => {
 };
 
 /***/ },
-/* 74 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2758,7 +2792,7 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 75 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2775,13 +2809,13 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 76 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(2);
 
 /***/ },
-/* 77 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2804,7 +2838,53 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 78 */
+/* 79 */
+/***/ function(module, exports, __webpack_require__) {
+
+let warning = __webpack_require__(0);
+let source = ['sx', 'sy', 'sWidth', 'sHeight'];
+let size = ['width', 'height'];
+let position = ['x', 'y'];
+
+module.exports = (props, children, loc, types, name) => {
+  let hassource = (!!props.sx) || (!!props.sy) || (!!props.sWidth) || (!!props.sHeight);
+
+  let hassize = hassource || (!!props.width) || (!!props.height);
+
+  let hasposition = hassize || (!!props.x) || (!!props.y);
+
+  if (hassource) {
+    for(let i = 0; i < source.length; i++) {
+      warning(source[i], 'e2d', name, loc, '0');
+      props[source[i]] = types.numericLiteral(0);
+    }
+  }
+
+  if (hassize) {
+    for(let i = 0; i < size.length; i++) {
+      warning(size[i], 'e2d', name, loc, '0');
+      props[size[i]] = types.numericLiteral(0);
+    }
+  }
+
+  if (hasposition) {
+    for(let i = 0; i < position.length; i++) {
+      warning(position[i], 'e2d', name, loc, '0');
+      props[position[i]] = types.numericLiteral(0);
+    }
+  }
+
+  if (!props.img) {
+    warning('img', 'e2d', name, loc, 'emptyImage');
+    props.img = types.newExpression(
+      types.identifier('Image'),
+      []
+    );
+  }
+};
+
+/***/ },
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2853,19 +2933,19 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 79 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(4);
 
 /***/ },
-/* 80 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(2);
 
 /***/ },
-/* 81 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2880,7 +2960,7 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 82 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2895,7 +2975,7 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 83 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 let rect = __webpack_require__(2);
@@ -2912,7 +2992,7 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 84 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 
@@ -2932,7 +3012,7 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 85 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2947,7 +3027,7 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 86 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 let lineStyleProps = ['lineWidth', 'lineCap', 'lineJoin', 'miterLimit', 'lineDash', 'lineDashOffset'];
@@ -2968,13 +3048,13 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 87 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(3);
 
 /***/ },
-/* 88 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -2991,7 +3071,7 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 89 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -3004,7 +3084,7 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 90 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -3021,7 +3101,7 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 91 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
@@ -3029,7 +3109,7 @@ let warning = __webpack_require__(0);
 module.exports = __webpack_require__(3);
 
 /***/ },
-/* 92 */
+/* 94 */
 /***/ function(module, exports) {
 
 let shadowStyleProps = ['shadowBlur', 'shadowColor', 'shadowOffsetX', 'shadowOffsetY'];
@@ -3048,43 +3128,43 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 93 */
-/***/ function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(5);
-
-/***/ },
-/* 94 */
-/***/ function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(5);
-
-/***/ },
 /* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(4);
+module.exports = __webpack_require__(5);
 
 /***/ },
 /* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(2);
+module.exports = __webpack_require__(5);
 
 /***/ },
 /* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(6);
+module.exports = __webpack_require__(4);
 
 /***/ },
 /* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(7);
+module.exports = __webpack_require__(2);
 
 /***/ },
 /* 99 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(6);
+
+/***/ },
+/* 100 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(7);
+
+/***/ },
+/* 101 */
 /***/ function(module, exports) {
 
 let textStyleProps = ['font', 'textAlign', 'textBaseline', 'direction'];
@@ -3103,26 +3183,26 @@ module.exports = (props, children, loc, types, name) => {
 };
 
 /***/ },
-/* 100 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(8);
 
 /***/ },
-/* 101 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 module.exports = __webpack_require__(3);
 
 /***/ },
-/* 102 */
+/* 104 */
 /***/ function(module, exports) {
 
 module.exports = require("colors");
 
 /***/ },
-/* 103 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
 let transformAttributes = __webpack_require__(14);
