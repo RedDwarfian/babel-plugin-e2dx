@@ -12,22 +12,28 @@ module.exports = (props, children, loc, types, name) => {
 
   if (hassource) {
     for(let i = 0; i < source.length; i++) {
-      warning(source[i], 'e2d', name, loc, '0');
-      props[source[i]] = types.numericLiteral(0);
+      if (!props[source[i]]) {
+        warning(source[i], 'e2d', name, loc, '0');
+        props[source[i]] = types.numericLiteral(0);
+      }
     }
   }
 
   if (hassize) {
     for(let i = 0; i < size.length; i++) {
-      warning(size[i], 'e2d', name, loc, '0');
-      props[size[i]] = types.numericLiteral(0);
+      if (!props[source[i]]) {
+        warning(size[i], 'e2d', name, loc, '0');
+        props[size[i]] = types.numericLiteral(0);
+      }
     }
   }
 
   if (hasposition) {
     for(let i = 0; i < position.length; i++) {
-      warning(position[i], 'e2d', name, loc, '0');
-      props[position[i]] = types.numericLiteral(0);
+      if (!props[source[i]]) {
+        warning(position[i], 'e2d', name, loc, '0');
+        props[position[i]] = types.numericLiteral(0);
+      }
     }
   }
 
