@@ -69,7 +69,7 @@ module.exports =
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let colors = __webpack_require__(26);
 let colorize = __webpack_require__(27);
@@ -78,9 +78,9 @@ module.exports = (parameter, library, functionName, loc, replaceValue) => consol
   ${colors.yellow.bold('WARNING')}: Parameter missing: [${colorize.parse(parameter)}] for [${colorize.parse(`${library}.${functionName}`)}]. Using value [${colorize.parse(replaceValue)}] instead.
     ${colorize.parse(loc)}`);
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 /*
 
@@ -270,9 +270,9 @@ for (var map in colors.maps) {
 
 defineProps(colors, init());
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
@@ -301,9 +301,9 @@ module.exports = (props, children, loc, types, name) => {
   }
 };
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
@@ -319,9 +319,9 @@ module.exports = (props, children, loc, types, name) => {
   }
 };
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
@@ -359,9 +359,9 @@ module.exports = (props, children, loc, types, name) => {
   }
 };
 
-/***/ },
+/***/ }),
 /* 5 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
@@ -374,9 +374,9 @@ module.exports = (props, children, loc, types, name) => {
 
 };
 
-/***/ },
+/***/ }),
 /* 6 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
@@ -389,9 +389,9 @@ module.exports = (props, children, loc, types, name) => {
 
 };
 
-/***/ },
+/***/ }),
 /* 7 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
@@ -417,9 +417,9 @@ module.exports = (props, children, loc, types, name) => {
 
 };
 
-/***/ },
+/***/ }),
 /* 8 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
@@ -439,9 +439,9 @@ module.exports = (props, children, loc, types, name) => {
 
 };
 
-/***/ },
+/***/ }),
 /* 9 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, callee, attributes, children) => {
   let { callExpression } = types;
@@ -464,9 +464,9 @@ module.exports = (path, types, callee, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 10 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"./arc.js": 28,
@@ -534,9 +534,9 @@ module.exports = webpackContext;
 webpackContext.id = 10;
 
 
-/***/ },
+/***/ }),
 /* 11 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"./arc.js": 4,
@@ -593,9 +593,9 @@ module.exports = webpackContext;
 webpackContext.id = 11;
 
 
-/***/ },
+/***/ }),
 /* 12 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 
 
@@ -616,9 +616,9 @@ module.exports = (member, types) => {
   return result;
 };
 
-/***/ },
+/***/ }),
 /* 13 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (children, types) => children.filter(
   (child) => !types.isJSXText(child)
@@ -626,9 +626,9 @@ module.exports = (children, types) => children.filter(
   (child) => child.expression || child
 );
 
-/***/ },
+/***/ }),
 /* 14 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (attributes, types) => attributes.reduce(
   (index, attribute) => {
@@ -637,21 +637,21 @@ module.exports = (attributes, types) => attributes.reduce(
   },
 {});
 
-/***/ },
+/***/ }),
 /* 15 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = require("babel-plugin-syntax-jsx");
 
-/***/ },
+/***/ }),
 /* 16 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = require("path");
 
-/***/ },
+/***/ }),
 /* 17 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
 	throw new Error("Cannot find module '" + req + "'.");
@@ -662,9 +662,9 @@ module.exports = webpackEmptyContext;
 webpackEmptyContext.id = 17;
 
 
-/***/ },
+/***/ }),
 /* 18 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module['exports'] = function runTheTrap (text, options) {
   var result = "";
@@ -713,9 +713,9 @@ module['exports'] = function runTheTrap (text, options) {
 }
 
 
-/***/ },
+/***/ }),
 /* 19 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 // please no
 module['exports'] = function zalgo(text, options) {
@@ -823,9 +823,9 @@ module['exports'] = function zalgo(text, options) {
 }
 
 
-/***/ },
+/***/ }),
 /* 20 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 var colors = __webpack_require__(1);
 
@@ -840,9 +840,9 @@ module['exports'] = (function() {
   }
 })();
 
-/***/ },
+/***/ }),
 /* 21 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 var colors = __webpack_require__(1);
 
@@ -859,9 +859,9 @@ module['exports'] = (function () {
 
 
 
-/***/ },
+/***/ }),
 /* 22 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 var colors = __webpack_require__(1);
 
@@ -872,9 +872,9 @@ module['exports'] = (function () {
   };
 })();
 
-/***/ },
+/***/ }),
 /* 23 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 var colors = __webpack_require__(1);
 
@@ -882,9 +882,9 @@ module['exports'] = function (letter, i, exploded) {
   return i % 2 === 0 ? letter : colors.inverse(letter);
 };
 
-/***/ },
+/***/ }),
 /* 24 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 /*
 The MIT License (MIT)
@@ -964,9 +964,9 @@ Object.keys(codes).forEach(function (key) {
   style.close = '\u001b[' + val[1] + 'm';
 });
 
-/***/ },
+/***/ }),
 /* 25 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 /*
 The MIT License (MIT)
@@ -1030,9 +1030,9 @@ module.exports = (function () {
   return false;
 })();
 
-/***/ },
+/***/ }),
 /* 26 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 //
 // Remark: Requiring this file will use the "safe" colors API which will not touch String.prototype
@@ -1044,9 +1044,9 @@ module.exports = (function () {
 var colors = __webpack_require__(1);
 module['exports'] = colors;
 
-/***/ },
+/***/ }),
 /* 27 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (function() {
   "use strict";
@@ -1775,9 +1775,9 @@ module.exports = (function() {
   };
 })()
 
-/***/ },
+/***/ }),
 /* 28 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -1806,9 +1806,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 29 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -1826,9 +1826,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 30 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -1843,9 +1843,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 31 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -1860,9 +1860,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 32 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -1880,9 +1880,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 33 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -1898,9 +1898,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 34 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -1917,9 +1917,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 35 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -1935,9 +1935,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 36 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -1952,9 +1952,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 37 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -1969,9 +1969,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 38 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -1987,9 +1987,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 39 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2019,9 +2019,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 40 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2056,9 +2056,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 41 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2073,9 +2073,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 42 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2105,9 +2105,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 43 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2124,9 +2124,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 44 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2143,9 +2143,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 45 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2172,9 +2172,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 46 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2191,9 +2191,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 47 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2210,9 +2210,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 48 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2229,9 +2229,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 49 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2248,9 +2248,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 50 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2267,9 +2267,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 51 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 let props = ['lineWidth', 'lineCap', 'lineJoin', 'miterLimit', 'lineDash', 'lineDashOffset'];
 
@@ -2300,9 +2300,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 52 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2319,9 +2319,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 53 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2339,9 +2339,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 54 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2357,9 +2357,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 55 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2375,9 +2375,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 56 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2394,9 +2394,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 57 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2413,9 +2413,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 58 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2432,9 +2432,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 59 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2450,9 +2450,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 60 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2468,9 +2468,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 61 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2485,9 +2485,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 62 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2504,9 +2504,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 63 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 let props = ['shadowBlur', 'shadowColor', 'shadowOffsetX', 'shadowOffsetY'];
 
@@ -2537,9 +2537,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 64 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2555,9 +2555,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 65 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2573,9 +2573,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 66 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2590,9 +2590,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 67 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2622,9 +2622,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 68 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2641,9 +2641,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 69 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2660,9 +2660,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 70 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2689,9 +2689,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 71 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2707,9 +2707,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 72 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 let props = ['font', 'textAlign', 'textBaseline', 'direction'];
 
@@ -2741,9 +2741,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 73 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2760,9 +2760,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 74 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = (path, types, attributes, children) => {
   let { identifier, memberExpression, callExpression } = types;
@@ -2777,9 +2777,9 @@ module.exports = (path, types, attributes, children) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 75 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
@@ -2795,9 +2795,9 @@ module.exports = (props, children, loc, types, name) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 76 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
@@ -2812,15 +2812,15 @@ module.exports = (props, children, loc, types, name) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 77 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(2);
 
-/***/ },
+/***/ }),
 /* 78 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
@@ -2841,9 +2841,9 @@ module.exports = (props, children, loc, types, name) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 79 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 let source = ['sx', 'sy', 'sWidth', 'sHeight'];
@@ -2893,9 +2893,9 @@ module.exports = (props, children, loc, types, name) => {
   }
 };
 
-/***/ },
+/***/ }),
 /* 80 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
@@ -2942,36 +2942,36 @@ module.exports = (props, children, loc, types, name) => {
   }
 };
 
-/***/ },
+/***/ }),
 /* 81 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(4);
 
-/***/ },
+/***/ }),
 /* 82 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(2);
 
-/***/ },
+/***/ }),
 /* 83 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
 module.exports = (props, children, loc, types, name) => {
 
-  if (!props.value) {
-    warning('value', 'e2d', name, loc, '1');
-    props.value = types.numericLiteral(1);
+  if (!props.alpha) {
+    warning('alpha', 'e2d', name, loc, '1');
+    props.alpha = types.numericLiteral(1);
   }
 
 };
 
-/***/ },
+/***/ }),
 /* 84 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
@@ -2984,9 +2984,9 @@ module.exports = (props, children, loc, types, name) => {
 
 };
 
-/***/ },
+/***/ }),
 /* 85 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let rect = __webpack_require__(2);
 
@@ -3001,9 +3001,9 @@ module.exports = (props, children, loc, types, name) => {
   return rect(props, children, loc, types, name);
 };
 
-/***/ },
+/***/ }),
 /* 86 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 
 let warning = __webpack_require__(0);
@@ -3021,9 +3021,9 @@ module.exports = (props, children, loc, types, name) => {
   }
 };
 
-/***/ },
+/***/ }),
 /* 87 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
@@ -3036,9 +3036,9 @@ module.exports = (props, children, loc, types, name) => {
 
 };
 
-/***/ },
+/***/ }),
 /* 88 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let lineStyleProps = ['lineWidth', 'lineCap', 'lineJoin', 'miterLimit', 'lineDash', 'lineDashOffset'];
 
@@ -3057,15 +3057,15 @@ module.exports = (props, children, loc, types, name) => {
 
 };
 
-/***/ },
+/***/ }),
 /* 89 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(3);
 
-/***/ },
+/***/ }),
 /* 90 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 module.exports = (props, children, loc, types, name) => {
@@ -3080,9 +3080,9 @@ module.exports = (props, children, loc, types, name) => {
   
 };
 
-/***/ },
+/***/ }),
 /* 91 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
@@ -3093,9 +3093,9 @@ module.exports = (props, children, loc, types, name) => {
   }
 };
 
-/***/ },
+/***/ }),
 /* 92 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
@@ -3110,17 +3110,17 @@ module.exports = (props, children, loc, types, name) => {
   );
 };
 
-/***/ },
+/***/ }),
 /* 93 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 
 module.exports = __webpack_require__(3);
 
-/***/ },
+/***/ }),
 /* 94 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 let shadowStyleProps = ['shadowBlur', 'shadowColor', 'shadowOffsetX', 'shadowOffsetY'];
 
@@ -3137,45 +3137,45 @@ module.exports = (props, children, loc, types, name) => {
 
 };
 
-/***/ },
+/***/ }),
 /* 95 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(5);
 
-/***/ },
+/***/ }),
 /* 96 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(5);
 
-/***/ },
+/***/ }),
 /* 97 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(4);
 
-/***/ },
+/***/ }),
 /* 98 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(2);
 
-/***/ },
+/***/ }),
 /* 99 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(6);
 
-/***/ },
+/***/ }),
 /* 100 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(7);
 
-/***/ },
+/***/ }),
 /* 101 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 let textStyleProps = ['font', 'textAlign', 'textBaseline', 'direction'];
 
@@ -3192,28 +3192,28 @@ module.exports = (props, children, loc, types, name) => {
 
 };
 
-/***/ },
+/***/ }),
 /* 102 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(8);
 
-/***/ },
+/***/ }),
 /* 103 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let warning = __webpack_require__(0);
 module.exports = __webpack_require__(3);
 
-/***/ },
+/***/ }),
 /* 104 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 module.exports = require("colors");
 
-/***/ },
+/***/ }),
 /* 105 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 let transformAttributes = __webpack_require__(14);
 let removeJSXText = __webpack_require__(13);
@@ -3273,5 +3273,5 @@ module.exports = function({ types }) {
   };
 };
 
-/***/ }
+/***/ })
 /******/ ]);
